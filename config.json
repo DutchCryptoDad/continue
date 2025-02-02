@@ -1,0 +1,90 @@
+// This is the config.json for Cursor AI. It is a JSON file that contains the configuration for the Cursor AI server. The configuration file specifies the models that Cursor AI will use, the context providers that Cursor AI will use, the slash commands that Cursor AI will support, the embeddings provider that Cursor AI will use, and the reranker that Cursor AI will use. The configuration file also specifies the tab autocomplete model that Cursor AI will use.
+{
+  "models": [
+    {
+      "title": "deepseek-coder:6.7b",
+      "provider": "ollama",
+      "apiBase": "http://localhost:11434/",
+      "model": "deepseek-coder:6.7b",
+      "systemMessage": "You are an expert software developer. You give helpful and concise responses."
+    },
+    {
+      "title": "codellama:13b",
+      "provider": "ollama",
+      "apiBase": "http://localhost:11434/",
+      "model": "codellama:13b",
+      "systemMessage": "You are an expert software developer. You give helpful and concise responses."
+    },
+    {
+      "title": "codeqwen",
+      "provider": "ollama",
+      "apiBase": "http://localhost:11434/",
+      "model": "codeqwen",
+      "systemMessage": "You are an expert software developer. You give helpful and concise responses."
+    },
+    {
+      "title": "codestral",
+      "provider": "ollama",
+      "apiBase": "http://localhost:11434/",
+      "model": "codestral",
+      "systemMessage": "You are an expert software developer. You give helpful and concise responses."
+    }
+  ],
+  "tabAutocompleteModel": {
+    "title": "Tab Autocomplete",
+    "apiBase": "http://localhost:11434/",
+    "provider": "ollama",
+    "model": "deepseek-coder:6.7b",
+    "systemMessage": "You are an expert software developer. You give helpful and concise responses."
+  },
+  "contextProviders": [
+    {
+      "name": "code",
+      "params": {}
+    },
+    {
+      "name": "docs",
+      "params": {}
+    },
+    {
+      "name": "diff",
+      "params": {}
+    },
+    {
+      "name": "terminal",
+      "params": {}
+    },
+    {
+      "name": "problems",
+      "params": {}
+    },
+    {
+      "name": "folder",
+      "params": {}
+    },
+    {
+      "name": "codebase",
+      "params": {}
+    }
+  ],
+  "slashCommands": [
+    {
+      "name": "share",
+      "description": "Export the current chat session to markdown"
+    },
+    {
+      "name": "cmd",
+      "description": "Generate a shell command"
+    },
+    {
+      "name": "commit",
+      "description": "Generate a git commit message"
+    }
+  ],
+  "embeddingsProvider": {
+    "provider": "free-trial"
+  },
+  "reranker": {
+    "name": "free-trial"
+  }
+}
